@@ -25,12 +25,12 @@ jobs:
               team_reviewers: ["orange-likers"]
             });
 
-            await github.rest.repos.createCommitStatus({
+            console.log("res: ", await github.rest.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
               sha: context.sha,
               state: "pending",
               description: "Waiting for approvals",
               context: "Code review"
-            });
+            }));
             
