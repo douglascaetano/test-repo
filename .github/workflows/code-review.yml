@@ -17,16 +17,9 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
-            const contrib = await github.rest.repos.listContributors({
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            });
-
-            console.log("Contribs: ", contrib);
-            
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
-              team_reviewers: ["@test-org-banana/orange-likers"]
+              team_reviewers: ["orange-likers"]
             });
