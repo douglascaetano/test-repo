@@ -29,7 +29,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               sha: context.sha,
-              state: pending,
+              state: "pending",
               description: "Waiting for approvals",
               context: "Code review"
             });
